@@ -33,7 +33,7 @@ export default function Form() {
     })
     const formData=formValue
 
-    const response= await fetch("http://localhost:8080/formdata",{
+    const response= await fetch("https://portfolio-vovo.onrender.com/formdata",{
       method:"POST",
       headers:{
         'Content-Type': 'application/json',
