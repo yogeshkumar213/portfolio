@@ -1,0 +1,47 @@
+/* index.css */
+body{
+  overflow-x:hidden;
+}
+.domain {
+  background-image: linear-gradient(to right, #8750f7 0%, #ffffff 100%);
+  background-clip: text; /* you're telling the browser to clip the background to the shape of the text.*/
+  -webkit-background-clip: text;
+  color: transparent; /* Text usually has a solid color, */
+}
+.dynamic-title {
+  min-height: 6rem; /* Adjust this based on the tallest title */
+  /* white-space: nowrap; Prevents text from wrapping into multiple lines */
+}
+.line {
+    text-decoration: none; /* Initial state */
+    transition: text-decoration 1s ease-out; /* Transition effect on text-decoration */
+}
+
+.line:hover {
+    text-decoration: underline; /* Changed state on hover */
+}
+.custom-bullet li::marker{
+  color: #8750f7;
+}
+.imghover{ 
+transition: transform 0.9s ease;
+}
+.imghover:hover{
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:  0 0 10px #fff;
+}
+.custom-border:hover{
+  border: none;
+}
+.card{
+  transition: transform 0.9s ease;
+}
+.card:hover{
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 20px #fff;
+}
+.form-border:focus {
+  transition: border-color 0.6s ease;
+  outline: none;
+  border-color: #8750f7;
+}
