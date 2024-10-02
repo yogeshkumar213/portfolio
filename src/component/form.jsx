@@ -22,8 +22,14 @@ export default function Form() {
   };
 
   let handleSubmit = async (event) => {
-    // console.log(formValue.firstName)
     event.preventDefault()
+    if(!formValue.emailAdd || !formValue.firstName ){
+      alert("Please fill out all required fields")
+      return
+    }
+    try{
+    // console.log(formValue.firstName)
+   
     setformValue({
       firstName: "",
       lastName: "",
@@ -31,6 +37,7 @@ export default function Form() {
       phoneNo: "",
       message: "",
     })
+   alert("Email sent to Yogesh")
     const formData=formValue
 
     const response= await fetch("https://portfolio-vovo.onrender.com/formdata",{
@@ -40,8 +47,14 @@ export default function Form() {
       },body:JSON.stringify(formData)// means data send to backend in json object 
       
     })
+   
     const result=await response.json();//handle backend response
     console.log(result)
+  }catch(err){
+    console.error("error sending email",err)
+    alert("Failed to send email. Please try again.")
+  }
+   
   
   };
 
@@ -55,7 +68,9 @@ export default function Form() {
               onChange={inputChange}
               placeholder="First name"
               name="firstName"
-              className="bg-black p-1.5 border border-slate-800 form-border rounded-lg w-full text-white"
+              required
+        
+              className="bg-black p-1.5 border border-slate-800 form-border rounded-lg w-full text-white" 
             />
             <input
               onChange={inputChange}
